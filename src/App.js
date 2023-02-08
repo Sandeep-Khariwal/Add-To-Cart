@@ -7,6 +7,9 @@ import Home from './components/Home';
 import Cart from './components/Cart';
 import Navbar from './components/Navbar';
 import store from './store/Store';
+import Error from './components/Error';
+
+import "./styles/error.scss"
 
 function App() {
   return (
@@ -16,7 +19,8 @@ function App() {
         <Navbar/>
         <Routes>
           <Route  path='/' element={<Home/>} ></Route>
-          <Route  path='/cart' element={<Cart/>} ></Route>
+          <Route  exact path='/cart' element={<Cart/>} ></Route>
+          <Route  path='*' element={<Error/>} ></Route>
         </Routes>
       </Router>
       </Provider>
